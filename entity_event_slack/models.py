@@ -8,11 +8,15 @@ class SlackMediumManager(models.Manager):
     def get_queryset(self):
         return super(SlackMediumManager, self).get_queryset().filter(name=constants.SLACK_MEDIUM_NAME)
 
+    def create_slack_medium(self, **kwargs):
+        return self.get_or_create(name=constants.SLACK_MEDIUM_NAME, defaults=kwargs)[0]
+
 
 class SlackMedium(Medium):
     """
     A medium that extends djagno entity event's Medium to include
-    Slack-specific configuration.
+    Slack-specific configuration. When this medium is present, events will be pushed to this
+    medium using the configured api_token and channel.
     """
     # The slack API token
     api_token = models.TextField()

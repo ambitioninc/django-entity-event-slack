@@ -8,6 +8,8 @@ v0.1.1
 
 * Added the ability to configure an icon url for the slack bot
 
+* Added the ability to configure the user name for the slack bot
+
 v0.1
 ----
 

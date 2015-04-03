@@ -13,10 +13,18 @@ class Migration(SchemaMigration):
                       self.gf('django.db.models.fields.TextField')(default=''),
                       keep_default=False)
 
+        # Adding field 'SlackMedium.username'
+        db.add_column(u'entity_event_slack_slackmedium', 'username',
+                      self.gf('django.db.models.fields.TextField')(default=''),
+                      keep_default=False)
+
 
     def backwards(self, orm):
         # Deleting field 'SlackMedium.icon_url'
         db.delete_column(u'entity_event_slack_slackmedium', 'icon_url')
+
+        # Deleting field 'SlackMedium.username'
+        db.delete_column(u'entity_event_slack_slackmedium', 'username')
 
 
     models = {
@@ -40,7 +48,8 @@ class Migration(SchemaMigration):
             'channel': ('django.db.models.fields.TextField', [], {}),
             'creation_time': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'icon_url': ('django.db.models.fields.TextField', [], {'default': "''"}),
-            u'medium_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['entity_event.Medium']", 'unique': 'True', 'primary_key': 'True'})
+            u'medium_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['entity_event.Medium']", 'unique': 'True', 'primary_key': 'True'}),
+            'username': ('django.db.models.fields.TextField', [], {'default': "''"})
         }
     }
 

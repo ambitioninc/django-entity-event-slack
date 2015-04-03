@@ -43,4 +43,5 @@ def send_unseen_slack_notifications():
         msg = '\n'.join([html for (txt, html) in rendered_events.values()])
 
         if msg:
-            slack.chat.post_message(slack_medium.channel, msg, username='Ambition', icon_url=slack_medium.icon_url)
+            slack.chat.post_message(
+                slack_medium.channel, msg, username=slack_medium.username, icon_url=slack_medium.icon_url)

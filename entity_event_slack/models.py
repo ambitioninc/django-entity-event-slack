@@ -31,4 +31,7 @@ class SlackMedium(Medium):
     # The icon url to use for the bot
     icon_url = models.TextField(default='')
 
+    # The username for this bot
+    username = models.TextField(default='')
+
     objects = SlackMediumManager()

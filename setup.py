@@ -30,7 +30,6 @@ setup(
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
@@ -39,12 +38,19 @@ setup(
     ],
     license='MIT',
     install_requires=[
-        'django>=1.6',
+        'celery>=3.1',
+        'django>=1.6,<1.7',
+        'django-db-mutex>=0.1.3',
         'django-entity-event>=0.3.0',
+        'django-manager-utils>=0.7.2',
+        'pyslack>=0.1.3',
+        'requests',
     ],
     tests_require=[
         'psycopg2',
         'django-nose',
+        'django-dynamic-fixture',
+        'freezegun',
         'south',
         'mock>=1.0.1',
         'coverage>=3.7.1',

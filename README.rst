@@ -14,11 +14,9 @@
 
 
 django-entity-event-slack
-===============
+=========================
 
-
-I have failed to provide a good README.rst in my project, and you should shun
-me if I do any pull requests
+Provides a pushable Slack medium for the Django Entity Event framework
 
 Installation
 ------------

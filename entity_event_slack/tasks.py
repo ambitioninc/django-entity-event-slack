@@ -25,6 +25,7 @@ def send_unseen_slack_notifications():
     """
     slack_medium = get_or_none(SlackMedium.objects)
 
+    print 'medim', slack_medium
     if slack_medium:
         slack.api_token = slack_medium.api_token
 

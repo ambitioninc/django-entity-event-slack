@@ -50,6 +50,7 @@ setup(
         'psycopg2',
         'django-nose',
         'django-dynamic-fixture',
+        'freezegun',
         'south',
         'mock>=1.0.1',
         'coverage>=3.7.1',

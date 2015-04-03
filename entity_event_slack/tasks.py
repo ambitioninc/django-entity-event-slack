@@ -7,7 +7,7 @@ import slack.chat
 from entity_event_slack.models import SlackMedium
 
 
-class ConvertEventsToEmails(Task):
+class SendUnseenSlackNotificationsTask(Task):
     """
     Converts events to emails based on the email subscriptions.
     """

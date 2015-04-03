@@ -7,7 +7,14 @@ from mock import patch, call
 import slack
 
 from entity_event_slack.models import SlackMedium
-from entity_event_slack.tasks import send_unseen_slack_notifications
+from entity_event_slack.tasks import send_unseen_slack_notifications, SendUnseenSlackNotificationsTask
+
+
+class TestRunWorker(TestCase):
+    @patch('entity_event_slack.tasks.send_unseen_slack_notifications', spec_set=True)
+    def test_run_worker(self, mock_send_unseen_slack_notifications):
+        SendUnseenSlackNotificationsTask().run()
+        mock_send_unseen_slack_notifications.assert_called_once_with()
 
 
 class TestSendUnseenNotifications(TestCase):

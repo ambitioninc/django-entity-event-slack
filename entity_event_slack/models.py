@@ -28,4 +28,7 @@ class SlackMedium(Medium):
     # pushed
     creation_time = models.DateTimeField(auto_now_add=True)
 
+    # The icon url to use for the bot
+    icon_url = models.TextField(default='')
+
     objects = SlackMediumManager()

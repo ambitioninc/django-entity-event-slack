@@ -40,5 +40,7 @@ def send_unseen_slack_notifications():
         # Try to post them to the configured slack channel. If the post fails, all events will
         # be marked as seen and never sent to slack. This is a safety measure to ensure we dont
         # send duplicate events to slack
-        for e, (txt, html) in rendered_events.items():
-            slack.chat.post_message(slack_medium.channel, html, username='Ambition')
+        msg = '\n'.join([html for (txt, html) in rendered_events.values()])
+
+        if msg:
+            slack.chat.post_message(slack_medium.channel, msg, username='Ambition', icon_url=slack_medium.icon_url)

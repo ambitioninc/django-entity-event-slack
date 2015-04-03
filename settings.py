@@ -37,10 +37,13 @@ def configure_settings():
                 'default': db_config,
             },
             INSTALLED_APPS=(
+                'db_mutex',
                 'django.contrib.auth',
                 'django.contrib.contenttypes',
                 'django.contrib.sessions',
                 'django.contrib.admin',
+                'entity',
+                'entity_event',
                 'south',
                 'entity_event_slack',
                 'entity_event_slack.tests',

@@ -35,7 +35,9 @@ class TestSendUnseenNotifications(TestCase):
     def test_w_basic_entity_event_setup(self, mock_post_message):
         style = G(RenderingStyle)
         source = G(Source)
-        slack_medium = G(SlackMedium, channel='channel', name='slack', api_token='api_token', rendering_style=style)
+        slack_medium = G(
+            SlackMedium, channel='channel', name='slack', api_token='api_token', rendering_style=style,
+            icon_url='icon_url', username='user')
         G(ContextRenderer, rendering_style=style, source=source, html_template='You did it!')
         G(Subscription, medium=slack_medium, source=source, only_following=False)
 
@@ -45,7 +47,7 @@ class TestSendUnseenNotifications(TestCase):
 
         self.assertEquals(slack_medium.creation_time, datetime(2015, 1, 1))
         self.assertEquals(mock_post_message.call_args_list, [
-            call('channel', 'You did it!', username='Ambition')
+            call('channel', 'You did it!', icon_url='icon_url', username='user')
         ])
         self.assertEquals(slack.api_token, 'api_token')
         self.assertEquals(EventSeen.objects.count(), 1)
@@ -55,7 +57,9 @@ class TestSendUnseenNotifications(TestCase):
     def test_w_basic_entity_event_setup_preexisting_event(self, mock_post_message):
         style = G(RenderingStyle)
         source = G(Source)
-        slack_medium = G(SlackMedium, channel='channel', name='slack', api_token='api_token', rendering_style=style)
+        slack_medium = G(
+            SlackMedium, channel='channel', name='slack', api_token='api_token', rendering_style=style,
+            icon_url='icon_url', username='user')
         G(ContextRenderer, rendering_style=style, source=source, html_template='You did it!')
         G(Subscription, medium=slack_medium, source=source, only_following=False)
 
@@ -73,7 +77,9 @@ class TestSendUnseenNotifications(TestCase):
     def test_w_basic_entity_multiple_event_setup(self, mock_post_message):
         style = G(RenderingStyle)
         source = G(Source)
-        slack_medium = G(SlackMedium, channel='channel', name='slack', api_token='api_token', rendering_style=style)
+        slack_medium = G(
+            SlackMedium, icon_url='icon_url', channel='channel', name='slack', api_token='api_token',
+            rendering_style=style, username='user')
         G(ContextRenderer, rendering_style=style, source=source, html_template='You did it!')
         G(Subscription, medium=slack_medium, source=source, only_following=False)
 
@@ -84,8 +90,7 @@ class TestSendUnseenNotifications(TestCase):
 
         self.assertEquals(slack_medium.creation_time, datetime(2015, 1, 1))
         self.assertEquals(mock_post_message.call_args_list, [
-            call('channel', 'You did it!', username='Ambition'),
-            call('channel', 'You did it!', username='Ambition')
+            call('channel', 'You did it!\nYou did it!', icon_url='icon_url', username='user'),
         ])
         self.assertEquals(slack.api_token, 'api_token')
         self.assertEquals(EventSeen.objects.count(), 2)

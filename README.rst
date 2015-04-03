@@ -16,7 +16,7 @@
 django-entity-event-slack
 =========================
 
-Provides a pushable Slack medium for the Django Entity Event framework.
+A pushable Slack medium for the Django Entity Event framework.
 
 Installation
 ------------

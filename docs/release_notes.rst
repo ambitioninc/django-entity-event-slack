@@ -1,6 +1,12 @@
 Release Notes
 =============
 
+v0.2.0
+------
+
+* Dropped Django 1.6 support
+* Added Python 3.4 support
+
 v0.1.1
 ------
 

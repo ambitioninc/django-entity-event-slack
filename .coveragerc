@@ -4,6 +4,7 @@ omit =
     entity_event_slack/migrations/*
     entity_event_slack/tests/*
     entity_event_slack/version.py
+    entity_event_slack/apps.py
 source = entity_event_slack
 [report]
 exclude_lines =

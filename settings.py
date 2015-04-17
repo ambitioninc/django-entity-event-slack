@@ -33,6 +33,7 @@ def configure_settings():
             raise RuntimeError('Unsupported test DB {0}'.format(test_db))
 
         settings.configure(
+            MIDDLEWARE_CLASSES=(),
             DATABASES={
                 'default': db_config,
             },
@@ -44,7 +45,6 @@ def configure_settings():
                 'django.contrib.admin',
                 'entity',
                 'entity_event',
-                'south',
                 'entity_event_slack',
                 'entity_event_slack.tests',
             ),

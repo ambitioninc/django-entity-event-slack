@@ -29,10 +29,10 @@ To install the latest code directly from source, type::
     pip install git+git://github.com/ambitioninc/django-entity-event-slack.git
 
 Documentation
-=============
+-------------
 
 Full documentation is available at http://django-entity-event-slack.readthedocs.org
 
 License
-=======
+-------
 MIT License (see LICENSE)

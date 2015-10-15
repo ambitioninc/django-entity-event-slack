@@ -50,4 +50,6 @@ def configure_settings():
             ),
             ROOT_URLCONF='entity_event_slack.urls',
             DEBUG=False,
+            TEST_RUNNER='django_nose.NoseTestSuiteRunner',
+            NOSE_ARGS=['--nocapture', '--nologcapture', '--verbosity=1'],
         )

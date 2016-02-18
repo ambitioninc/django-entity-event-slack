@@ -1,5 +1,5 @@
 from celery import Task
-from db_mutex import db_mutex
+from db_mutex.db_mutex import db_mutex
 from manager_utils import get_or_none
 import slack
 import slack.chat

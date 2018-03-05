@@ -4,11 +4,11 @@
 .. image:: https://coveralls.io/repos/ambitioninc/django-entity-event-slack/badge.png?branch=develop
     :target: https://coveralls.io/r/ambitioninc/django-entity-event-slack?branch=develop
 
-.. image:: https://pypip.in/v/django-entity-event-slack/badge.png
+.. image:: https://img.shields.io/pypi/v/django-entity-event-slack.svg
     :target: https://pypi.python.org/pypi/django-entity-event-slack/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/d/django-entity-event-slack/badge.png
+.. image:: https://img.shields.io/pypi/dm/django-entity-event-slack.svg
     :target: https://pypi.python.org/pypi/django-entity-event-slack/
     :alt: Number of PyPI downloads
 

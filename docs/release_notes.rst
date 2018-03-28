@@ -1,6 +1,10 @@
 Release Notes
 =============
 
+v0.7.0
+------
+* Reserving version for py3 support in ambition
+
 v0.6.0
 ------
 * Add python 3.6 support

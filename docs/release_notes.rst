@@ -1,6 +1,10 @@
 Release Notes
 =============
 
+v0.7.0
+------
+* Removed the send unseen task from the codebase, see docs for source to define your own
+
 v0.6.0
 ------
 * Add python 3.6 support

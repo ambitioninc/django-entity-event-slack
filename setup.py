@@ -44,8 +44,7 @@ setup(
     ],
     license='MIT',
     install_requires=[
-        'celery>=3.1,<4.0',
-        'Django>=1.9',
+        'Django>=1.11,<2.0',
         'django-db-mutex>=0.5.0',
         'django-entity-event>=0.8.0',
         'django-manager-utils>=0.13.0',

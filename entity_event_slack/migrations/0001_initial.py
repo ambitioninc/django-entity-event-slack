@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SlackMedium',
             fields=[
-                ('medium_ptr', models.OneToOneField(serialize=False, to='entity_event.Medium', auto_created=True, primary_key=True, parent_link=True)),
+                ('medium_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, serialize=False, to='entity_event.Medium', auto_created=True, primary_key=True, parent_link=True)),
                 ('api_token', models.TextField()),
                 ('channel', models.TextField()),
                 ('creation_time', models.DateTimeField(auto_now_add=True)),

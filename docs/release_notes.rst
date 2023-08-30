@@ -1,6 +1,10 @@
 Release Notes
 =============
 
+v1.1.1
+------
+* Read the docs config v2
+
 v1.1.0
 ------
 * Reserving version for py3 support in ambition
